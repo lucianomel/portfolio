@@ -4,7 +4,11 @@ import path from 'path';
 export default async function handler(req:any, res:any) {
     let IMAGES : string[] = []
     try {
-        const files = await readDirAsync(process.cwd()+"/public/proyect_gifs");
+        const dirPath = process.cwd() + "/public/proyect_gifs";
+        if (!fs.existsSync(dirPath)) {
+            throw new Error(`Directory does not exist: ${dirPath}`);
+        }
+        const files = await readDirAsync(dirPath);
         files.forEach(function (file) {
             const extname = path.extname(file);
             if (extname === '.jpg' || extname === '.png' || extname === '.gif') {
@@ -29,8 +33,3 @@ function readDirAsync(dirname: string) {
         });
     });
 }
-
-
-
-
-
