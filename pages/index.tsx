@@ -6,17 +6,16 @@ import {useEffect} from "react";
 
 const inter = Inter({ subsets: ['latin'] })
 
-function fadePageIn() {
-    const body = document.querySelector('body');
-    // @ts-ignore
-    body.classList.add('fade-in');
-}
-
-if (typeof window !== 'undefined') {
-    window.addEventListener('load', fadePageIn);
-}
-
 export default function Home() {
+    function fadePageIn() {
+        const body = document.querySelector('body');
+        // @ts-ignore
+        body.classList.add('fade-in');
+    }
+
+    if (typeof window !== 'undefined') {
+        window.addEventListener('load', fadePageIn);
+    }
     useEffect(() => {
         fadePageIn();
     }, []);
@@ -33,8 +32,8 @@ export default function Home() {
       </Head>
       <main className={styles.main}>
           <h1 className={styles["main_title"]}>Luciano Melhem portfolio projects</h1>
-          <List></List>
-          <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/js/bootstrap.bundle.min.js"
+          <List/>
+          <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/js/bootstrap.bundle.min.js"
                   integrity="sha384-qKXV1j0HvMUeCBQ+QVp7JcfGl760yU08IQ+GpUo5hlbpg51QRiuqHAJz8+BrxE/N"
                   crossOrigin="anonymous"></script>
       </main>

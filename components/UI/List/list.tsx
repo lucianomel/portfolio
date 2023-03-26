@@ -13,7 +13,7 @@ export default function List() {
                 <div className="col-12 col-lg-6">
                     <h2 className={styles["subtitle"]}>Programming languages and technologies</h2>
                     <ul className="list-group">
-                        {LIST.map(list_item=><ListItem content={list_item.content} width={list_item.level} />) }
+                        {LIST.map(list_item=><ListItem key={Math.random()} content={list_item.content} width={list_item.level} />) }
                     </ul>
                 </div>
                 <div className="col-12 col-lg-6">
