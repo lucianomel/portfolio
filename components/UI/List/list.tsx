@@ -4,7 +4,7 @@ import Projects from "@/components/Proyects/Projects"
 
 export default function List() {
     const LIST =[{content:"C++",level:"80%"},{content:"Python",level:"40%"},{content:"Javascript",level:"80%"},
-        {content:"React",level:"80%"},{content:"C++",level:"80%"},{content:"NodeJs",level:"60%"},
+        {content:"React",level:"80%"},{content:"NodeJs",level:"60%"},
         {content:"HTML, CSS",level:"60%"},{content:"SQL",level:"30%"},{content:"mongoDB",level:"50%"}]
     return (
         <>
