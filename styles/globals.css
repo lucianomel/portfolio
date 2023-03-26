@@ -9,3 +9,18 @@ body {
 body.fade-in {
     opacity: 1;
 }
+
+.white{
+    color:white;
+}
+.main_title{
+    font-size: 3rem;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+}
+
+.m-3{
+    margin: 1rem;
+}

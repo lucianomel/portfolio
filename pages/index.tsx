@@ -3,6 +3,7 @@ import { Inter } from 'next/font/google'
 import styles from '@/styles/Home.module.css'
 import List from "@/components/UI/List/list"
 import {useEffect} from "react";
+import Link from 'next/link';
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -32,7 +33,12 @@ export default function Home() {
                 crossOrigin="anonymous"/>
       </Head>
       <main className={styles.main}>
-          <h1 className={styles["main_title"]}>Luciano Melhem portfolio projects</h1>
+          <h1 className={styles["main_title"]}>
+              Luciano Melhem portfolio projects -
+                <Link href="/gallery">
+                     Gallery
+                </Link>
+          </h1>
           <List/>
           <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/js/bootstrap.bundle.min.js"
                   integrity="sha384-qKXV1j0HvMUeCBQ+QVp7JcfGl760yU08IQ+GpUo5hlbpg51QRiuqHAJz8+BrxE/N"
