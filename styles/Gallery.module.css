@@ -47,6 +47,7 @@ a.link{
     font-size: larger;
     border-radius: 2rem;
     padding: 0.3em;
+    color: white;
 }
 a.link:hover{
     color: brown;
