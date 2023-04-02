@@ -20,6 +20,15 @@ body.fade-in {
     justify-content: center;
     align-content: center;
 }
+.sub_title{
+    font-size: 2rem;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    display: inline-block;
+}
+
 
 .m-3{
     margin: 1rem;

@@ -33,12 +33,16 @@ export default function Home() {
                 crossOrigin="anonymous"/>
       </Head>
       <main className={styles.main}>
-          <h1 className={styles["main_title"]}>
-              Luciano Melhem portfolio projects -
-                <Link href="/gallery">
-                     Gallery
-                </Link>
+          <h1 className="main_title">
+              Luciano Melhem portfolio projects
           </h1>
+              <div className={styles.gallery_button_wrapper}>
+                <button className={styles.gallery_button}>
+                  <Link href="/gallery"  style={{textDecoration:"none",color:"white"}}>
+                     Gallery
+                  </Link>
+                </button>
+              </div>
           <List/>
           <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/js/bootstrap.bundle.min.js"
                   integrity="sha384-qKXV1j0HvMUeCBQ+QVp7JcfGl760yU08IQ+GpUo5hlbpg51QRiuqHAJz8+BrxE/N"

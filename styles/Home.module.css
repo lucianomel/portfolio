@@ -1,7 +1,23 @@
-.main_title{
+.gallery_button{
+    padding: 2rem;
+    margin: 2rem;
+    display: block;
     font-size: 3rem;
-    color: white;
+    text-decoration: none;
+    background-color: rgba(65, 64, 64, 0.363);
+    border: 0.2rem solid gray;
+    transition: background-color 0.2s ease-in;
+    border-radius: 0.3rem;
+    box-shadow: 0.1rem 0.1rem 0.1rem white;
+}
+.gallery_button:hover{
+    background-color: rgba(102, 101, 101, 0.363);
+}
+.main{
+    text-align: center;
+}
+.gallery_button_wrapper{
     display: flex;
     justify-content: center;
-    align-content: center;
+    align-items: center;
 }

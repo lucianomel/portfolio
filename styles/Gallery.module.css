@@ -1,28 +1,31 @@
 .backIcon{
     filter: brightness(0) invert(1);
-    width: 2rem;
-    height: 2rem;
+    width: 3rem;
+    height: 3rem;
 }
 .backIcon:hover{
     cursor:pointer;
 }
 /*ENLARGE GRID IMAGES*/
-.image-grid {
+.imageGrid {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+    background-color: rgb(8, 8, 8);
+    border: 3px solid rgb(17, 17, 17);
 }
 
-.image-container {
+.imageContainer {
     position: relative;
 }
 
 .image {
-    width: 200px;
+    width: 400px;
     height: 200px;
     object-fit: cover;
     transition: transform 0.5s ease-in-out, width 0.5s ease-in-out,height 0.5s ease-in-out;
     cursor: pointer;
+    border: 5px solid rgb(26, 25, 25);
 }
 
 .image.enlarged {
@@ -34,4 +37,17 @@
     height: 100%;
     object-fit: contain;
     transform: translate(0, 0);
+}
+a.link{
+    outline: none;
+    display: block;
+    margin: 1rem;
+    text-decoration: none;
+    font-weight: 900;
+    font-size: larger;
+    border-radius: 2rem;
+    padding: 0.3em;
+}
+a.link:hover{
+    color: brown;
 }

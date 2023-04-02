@@ -1,21 +1,28 @@
 import fs from 'fs';
 import path from 'path';
 
+const FOLDERS = ["node","python"]
+
 export default async function handler(req:any, res:any) {
-    let IMAGES : string[] = []
+    let IMAGES : {[key: string]: string[];} = {}
+    FOLDERS.forEach(folder => {
+        IMAGES[folder] = []
+    });
     try {
-        const dirPath = process.cwd() + "/public/proyect_gifs";
-        if (!fs.existsSync(dirPath)) {
-            throw new Error(`Directory does not exist: ${dirPath}`);
-        }
-        const files = await readDirAsync(dirPath);
-        files.forEach(function (file) {
-            const extname = path.extname(file);
-            if (extname === '.jpg' || extname === '.png' || extname === '.gif') {
-                IMAGES.push(file)
+        await Promise.all(FOLDERS.map(async folder => {            
+            const dirPath = process.cwd() + "/public/proyect_"+folder;
+            if (!fs.existsSync(dirPath)) {
+                throw new Error(`Directory does not exist: ${dirPath}`);
             }
-        });
-        res.status(200).json({ contents: IMAGES });
+            const files = await readDirAsync(dirPath);
+            files.forEach(function (file) {
+                const extname = path.extname(file);
+                if (extname === '.jpg' || extname === '.png' || extname === '.gif') {
+                    IMAGES[folder].push(file)
+                }
+            });
+        }));
+        res.status(200).json(IMAGES);
     } catch (err) {
         console.log('Unable to scan directory: ' + err);
         res.status(500).json({ error: 'Unable to scan directory' });
