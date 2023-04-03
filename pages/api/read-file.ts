@@ -3,7 +3,7 @@ import path from 'path';
 
 const FOLDERS = ["node","python"]
 
-const root_dir = process.env.ROOT_DIR || process.cwd()
+const root_dir = process.cwd()
 
 export default async function handler(req:any, res:any) {
     let IMAGES : {[key: string]: string[];} = {}
@@ -11,6 +11,11 @@ export default async function handler(req:any, res:any) {
         IMAGES[folder] = []
     });
     try {
+        const { execSync } = require('child_process');
+        // Log the file tree in the root directory
+        const rootDirectory = process.cwd();
+        const fileList = execSync(`ls -R ${rootDirectory}`).toString();
+        console.log(fileList);
         await Promise.all(FOLDERS.map(async folder => {            
             const dirPath = root_dir + "/public/proyect_"+folder;
             if (!fs.existsSync(dirPath)) {
