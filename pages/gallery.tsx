@@ -18,6 +18,7 @@ const Gallery = () => {
             const response = await fetch('/api/read-file');
             const data = await response.json();
             setFileContents(data);
+            console.log(data)
         }
         fetchFileContents()
     }, []);

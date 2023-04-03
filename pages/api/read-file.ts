@@ -3,6 +3,8 @@ import path from 'path';
 
 const FOLDERS = ["node","python"]
 
+const root_dir = process.env.ROOT_DIR || process.cwd()
+
 export default async function handler(req:any, res:any) {
     let IMAGES : {[key: string]: string[];} = {}
     FOLDERS.forEach(folder => {
@@ -10,7 +12,7 @@ export default async function handler(req:any, res:any) {
     });
     try {
         await Promise.all(FOLDERS.map(async folder => {            
-            const dirPath = process.cwd() + "/public/proyect_"+folder;
+            const dirPath = root_dir + "/public/proyect_"+folder;
             if (!fs.existsSync(dirPath)) {
                 throw new Error(`Directory does not exist: ${dirPath}`);
             }
