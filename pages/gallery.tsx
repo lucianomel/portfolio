@@ -20,7 +20,12 @@ const Gallery = () => {
             setFileContents(data);
             console.log(data)
         }
-        fetchFileContents()
+        try{
+            fetchFileContents()
+        }catch(error){
+            console.log("api call failed")
+            console.log(error)
+        }
     }, []);
     if (!fileContents) {
         return <div className="white">Loading...</div>;
@@ -41,13 +46,13 @@ const Gallery = () => {
             </div>
                 <h3 className='sub_title'>Python projects</h3>
             <div className={styles.imageGrid}>
-                {fileContents.python.map(img=><span className={"m-3 "+styles.imageContainer} key={Math.random()}>
+                {fileContents.proyect_python.map(img=><span className={"m-3 "+styles.imageContainer} key={Math.random()}>
                     <img className={styles.image}  src={"proyect_python/"+img} width={200} alt={img} onClick={handleImageClick} ></img>
                 </span>)}
             </div>
                 <h3 className='sub_title'>Website projects</h3>
             <div className={styles.imageGrid}>
-                {fileContents.node.map(img=><span className={"m-3 "+styles.imageContainer} key={Math.random()}>
+                {fileContents.proyect_node.map(img=><span className={"m-3 "+styles.imageContainer} key={Math.random()}>
                     <img className={styles.image}  src={"proyect_node/"+img} width={400} alt={img} onClick={handleImageClick} />
                     <a className={styles.link} href={nodeLinks.node[img]}  target="_blank" rel="noopener noreferrer">Go to site</a>
                 </span>)}
