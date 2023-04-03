@@ -1,9 +1,5 @@
-import {readdirSync} from 'fs-extra';
+import {readdirSync} from 'fs'
 import path from 'path';
-
-const FOLDERS = ["node","python"]
-
-const ROOT_DIR= process.env.VERCEL_URL
 
 async function getFilesPaths(){
     const baseUrl = process.env.NEXT_PUBLIC_VERCEL_URL || 'http://localhost:3000'
@@ -18,7 +14,6 @@ async function getFilesPaths(){
         images[proyect_path].push(...projectImages)
         images[proyect_path].filter(image => `${baseUrl}/${image}`)
     })
-    console.log(images)
 
     return images
 }
