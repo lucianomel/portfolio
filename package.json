@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@types/fs-extra": "^11.0.1",
     "@types/node": "18.15.10",
     "@types/react": "18.0.29",
     "@types/react-dom": "18.0.11",
@@ -16,6 +17,7 @@
     "eslint": "8.36.0",
     "eslint-config-next": "13.2.4",
     "fs": "0.0.1-security",
+    "fs-extra": "^11.1.1",
     "next": "^13.2.4",
     "next-pwa": "^5.6.0",
     "path": "^0.12.7",

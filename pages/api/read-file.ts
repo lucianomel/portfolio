@@ -1,4 +1,4 @@
-import fs from 'fs';
+import {readdirSync} from 'fs-extra';
 import path from 'path';
 
 const FOLDERS = ["node","python"]
@@ -13,9 +13,8 @@ async function getFilesPaths(){
     projects_paths.forEach(path => {
         images[path] = []
     });
-    let imageUrls: any = {}
     projects_paths.forEach(proyect_path => {
-        const projectImages = fs.readdirSync(path.join(process.cwd(),"public",proyect_path))
+        const projectImages = readdirSync(path.join(process.cwd(),"public",proyect_path))
         images[proyect_path].push(...projectImages)
         images[proyect_path].filter(image => `${baseUrl}/${image}`)
     })
@@ -31,16 +30,4 @@ export default async function handler(req:any, res:any) {
         console.log('Unable to scan directory: ' + err);
         res.status(500).json({ error: 'Unable to scan directory' });
     }
-}
-
-function readDirAsync(dirname: string) {
-    return new Promise<string[]>((resolve, reject) => {
-        fs.readdir(dirname, function(err, files) {
-            if (err) {
-                reject(err);
-            } else {
-                resolve(files);
-            }
-        });
-    });
 }
