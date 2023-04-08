@@ -4,14 +4,15 @@
     display: block;
     font-size: 3rem;
     text-decoration: none;
-    background-color: rgba(65, 64, 64, 0.363);
+    background-color: rgba(15, 65, 231, 0.363);
     border: 0.2rem solid gray;
     transition: background-color 0.2s ease-in;
     border-radius: 0.3rem;
     box-shadow: 0.1rem 0.1rem 0.1rem white;
+    color: white;
 }
 .gallery_button:hover{
-    background-color: rgba(102, 101, 101, 0.363);
+    background-color: rgba(15, 65, 231, 0.582);
 }
 .main{
     text-align: center;
